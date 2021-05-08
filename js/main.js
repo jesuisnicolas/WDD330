@@ -6,8 +6,12 @@ const links = [
     {
         label: "Week 2 Assignments",
         url: "w02/index.html"
+    },
+    {
+        label: "Week 3 Assignments",
+        url: "w03/index.html"
     }
-  ]
+]
 
 
 function createListOfLinks(){
