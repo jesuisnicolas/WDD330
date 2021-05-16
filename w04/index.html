@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolas Schaberger | WDD330 | Week 04</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header>
@@ -20,23 +20,46 @@
             <p>It is possible to process the information in the frontend before sending it to the backend.</p>
             <p><span class="code">document.forms</span> returns all the forms of a site in the order they appear.</p>
             <p><span class="code">const form = document.getElementsByTagname('form')[0];</span> can be used too.</p>
-            <h4>Form properties and attributes:</h4>
-                <p><span class="code">form.submit()</span> will submit the form automatically.</p>
-                <p><span class="code">form.reset()</span> will reset all the <i>form controls</i> back to their initial state, BUT a regular html button with an attribute of type 'reset' will do the same job. Either option presents some usability issues, because an user could press the reset button accidentally and erase all the information in the form.</p>
-            <h4>Form Submission</h4>
-                <p>When we press the submit button the content of the form is sent to the server, but it can be intecepted using Javascript before it's sent.</p>
+           
+            <p><span class="code">form.submit()</span> will submit the form automatically.</p>
+            <p><span class="code">form.reset()</span> will reset all the <i>form controls</i> back to their initial state, BUT a regular html button with an attribute of type 'reset' will do the same job. Either option presents some usability issues, because an user could press the reset button accidentally and erase all the information in the form.</p>
+            <p>When we press the submit button the content of the form is sent to the server, but it can be intecepted using Javascript before it's sent.</p>
 
-                
+            <p>We can use form validation in the frontend using Javascript. Frontend validation should be used to enhance the user experience. It's also useful to reduce the amount of HTTP request that would be needed to send back a form that had errors.</p>
+
+            <h4>Object-oriented Programming</h4>
+            <p>Encapsulation: keeping the progamming logic inside an object and making methods available to implement the funcitonality.</p>
+            <p>Polymorphism: the same method can be use in different objects.</p>
+            <p>Inheritance: we can take the attributes and methods of an object and create a new one adding more methods or attributes to improve it.</p>
+            <p>Javascript is a Prototype-based language. Instead of using classes as blueprints for creating objects, it uses an actual object as the blueprint.</p>
+            <p>Static methods: are called by the class directly, and not by the instances of the class.</p>
+            <p>Prototypes should be used to add new properties and methods after the class has been declared.</p>
+
+            <p>We can have private properties using underscores. Getters and setters are a thing in JS too.</p>
+            <p>We can add new methods to built-in objects (monkey-patching).</p>
+
+            <p>Mixings sound really complicated.</p>   
+            <p>Using <span class="code">that = this</span> before a nested function to avoid 'this' to lose its scope sounds really good.</p>             
+            <p>Borrowing methods from prototypes? It looks like JS is pretty loose in some things.</p>
+
+            <p>Composition over Inheritance: This approach advocates creating small objects that describe single
+                tasks or behaviors and using them as the building blocks for more complex
+                objects.</p>
+
+            
         </div>
 
         <div class="weekQuestions">
             <h3>Questions:</h3>
             <p>WAI-ARIA labels?</p>
+            <p>Differences between class and prototype properties?</p>
+            <p>Why would you want to change the properties or methods od a class but not apply these changes to the already instantiated objects?</p>
+
         </div>
 
         <div class="weekExercises">
             <h3>Exercises</h3>
-            <a href="search.html">Search form</a>
+            <!-- <a href="search.html">Search form</a> -->
         </div>
         
     </div>

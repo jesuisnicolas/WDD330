@@ -77,7 +77,7 @@ const game = {
 view.start.addEventListener('click', () => startGame(), false);
 
 
-// this will allow the page to load before the alert windows displays.
+
 const startGame = () => {
     console.log("Starting Game");
     game.start(quiz);
