@@ -12,8 +12,12 @@ const links = [
         url: "w03/index.html"
     },
     {
-        label: "Week  Assignments",
+        label: "Week 4 Assignments",
         url: "w04/index.html"
+    },
+    {
+        label: "Week 5 Assignments",
+        url: "w05/index.html"
     }
 ]
 
