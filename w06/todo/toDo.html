@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ToDo App</title>
+</head>
+<body>
+    <h1>ToDo's List App</h1>
+
+    <div class="inputform">
+        <input type="text" name="newTask" id="newTask">
+        <button class="addNewTask" id="addNewTask">Add Task</button>
+    </div>
+
+    <div class="toDoList" id="toDoList">
+        <!-- here the list of elements will be built -->
+
+    </div>
+
+    <div class="viewButtons">
+        <button class="viewCompleted" onclick="showCompletedTasks()">Completed Tasks</button>
+        <button class="viewIncomplete" onclick="showUncompleteTasks()">ToDo Tasks</button>
+        <button class="viewAll" onclick="showAllTasks()">View All</button>
+        <button class="resetTasks" onclick="resetAllTasks()">Reset All Tasks</button>
+    </div>
+
+
+    <script src="js/todoApp.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas Schaberger | WDD330 | Week 10</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Nicolas Schabergers's WDD330 Assignments</h1>
+    </header>
+
+    <div class="week-container">
+        <h2>Week 10</h2>
+        
+        <div class="weekNotes">
+            <h3>Notes:</h3>
+                <h4>Client-side From Validation</h4>
+                    <p>When we have a form we have to control the information to check it is in the right format. Using client-side validation is an important feature of the user experience, but you also need to perform validation checks in the server side, mainly because client-side validation can be bypassed by a malicious user.</p>
+                    <p><b>Why do we validate forms?</b><br>
+                    <ul>
+                        <li>We want to get the richt data in the right format.</li>
+                        <li>We want to protect our user's data (I.E: forcing users to choose a secure password)</li>
+                        <li>We want to protect ourselves (Users can use forms to damage our application)</li>
+                    </ul></p>
+                    <p></p>
+                    <p>There are two types of validation: <br>
+                    <b>Built-in form validation:</b> Uses HTML5 features and has better performance than Javascript validation, but it's not as customizable as Javascript. <br>
+                    <b>Javascript form validation:</b> It's completely customizable, but you have to create it all, or use a library</p>
+
+                <h4>Built-in Validation:</h4>
+                    <ul>
+                        <li><span class="code">required</span></li>
+                        <li><span class="code">minlength</span> and <span class="code">maxlength</span> minimum and maximum length for strings.</li>
+                        <li><span class="code">min</span> and <span class="code">max</span> minimum and maximum values for numbers</li>
+                        <li><span class="code">type</span> specifies the type of data (number, date, string, email, etc)</li>
+                        <li><span class="code">pattern</span> specifies the pattern the data have to follow using regular expressions.</li>
+                    </ul>
+
+                    <p>If the input is valid, the element matches the <span class="code">:valid</span> CSS pseudo class, and the form will be submitted.</p>
+                    <p>If the input is <b>not</b> valid, the element matches the <span class="code">:invalid</span> CSS pseudo-class and the browser will block the form from being sent.</p>
+
+                <h4>Javascript Validation</h4>
+                    <p><b>Constraint Validation API</b>: Most browsers support the Constraint Validation API, which consists of methods and properties available on the following elements:</p>
+                    <ul>
+                        <li><span class="code">HTMLButtonElement</span></li>
+                        <li><span class="code">HTMLFieldSetElement</span></li>
+                        <li><span class="code">HTMLInputElement</span></li>
+                        <li><span class="code">HTMLOutputElement</span></li>
+                        <li><span class="code">HTMLSelectElement</span></li>
+                        <li><span class="code">HTMLTextAreaElement</span></li>
+                    </ul>
+                    <p>The API makes the following properties available for these elements</p>
+                    <p><span class="code">validationMessage</span> Returns a message describing the validation constraints that the control doesn't satisfy</p>
+                    <p><span class="code">validity</span> Returns a <span class="code">ValidityState</span> object that contains properties describing the validity of the element. This can be: <span class="code">patternMismatch, tooLong, tooShort, rangeOverflow, rangeUnderflow, typeMismatch, valid, valueMissing.</span></p>
+                    <p><span class="code">willValidate</span> Returns true if the elements will be validated when the form is submitted.</p>
+
+                    <p>Error messages can be customized using Javascript and the validity value, using an event listener in the input, and checking the value of validity.</p>
+                    <p>Using the novalidate attribute in our forms (in the HTML file) we can take complete control of the way the browser displays the errors using js and CSS.</p>
+
+                <h4>Using Fetch</h4>
+                    <p>Fetch is a Javascript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses. It also provides a fetch() method that provides an easy, logical way to fetch resources asynchronously.</p>
+                    <p>Fetch can be used by Service Workers.</p>
+                    <p>A basic Fetch:</p>
+                    <p><span class="code">fetch('http://example.com/movies.json')</span> this takes one argument (path) <br>
+                    <span class="code">.then(response => response.json())</span> returns a promise containing a response <br>
+                    <span class="code">.then(data => console.log(data));</span> we show the data in the console.</p>
+                    <p></p>
+                    <p>The fetch() method can accept a second parameter, an init object that allows us to control a number of options.</p>
+                    <p>Fetch can also be used to upload data, like a JSON file or any other kind of file.</p>
+
+
+
+        </div>
+
+        <div class="weekQuestions">
+            <h3>Questions:</h3>
+                <p>If legacy browsers don't support the Constraint Validation API, is there a way to force the user to use a different browser to be able to access to our website? Or how is that issue managed?</p>
+        </div>
+
+        
+    </div>

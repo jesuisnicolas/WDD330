@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas Schaberger | WDD330 | Week 08</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Nicolas Schabergers's WDD330 Assignments</h1>
+    </header>
+
+    <div class="week-container">
+        <h2>Week 08</h2>
+        
+        <div class="weekNotes">
+            <h3>Notes:</h3>
+                <p><b>Transform</b> > translate, rotate, scale, skew.</p>
+                <p>Transform doesn't work in inline elements. To make them work you have to add <span class="code">display: inline-block;</span></p>
+                
+                <p><b>Translate: </b>lets you move an element relative to its current position. <span class="code">transform: translate(45px, -45px);</span></p>
+                
+                <p><b>Scaling:</b> allows you to change the dimensions of an element. <span class="code">transform: scale(1.5, 0.25);</span></p>
+                <p>Scaled elements will grow or shrink from the center. To change that you can use the <span class="code">transform-origin</span> property.</p>
+
+                <p><b>Rotation:</b> rotates an element around the point of origin by an specified angle value. Positive degrees mean clockwise rotation.</p>
+                <p><span class="code">transform: rotate(10deg);</span></p>
+
+                <p><b>Skew:</b> specifies a skew along the x and y axes. <span class="code">transform: skew(15de, 4deg);</span></p>
+
+                <p>The order in which transforms are written is important because they're applied in that order. If you rotate something and then translate it, it will translate on the rotated axis. This can lead to unexpected behaviors.</p>
+
+                <h4>Transitions:</h4>
+
+                    <p>CSS transitions are smoother than JS transitions. Transitions allow the values of CSS properties to gradually change over time, providing simple animations.</p>
+                    <p><span class="code">transition: [property-name] [duration];</span></p>
+
+                    <p><b>Transition Timing:</b> controls the pace of the transition. The options are: ease, linear, ease-in, ease-out, ease-in-out. Another option is to customize the timing using cubic-bezier. Example: <span class="code">transition: all 2s ease-out 5ms;</span></p>
+                
+                <h4>Animations:</h4>
+
+                    <p>Animations are more powerful than transitions because they allow you to control each step of the animation via keyframes. Transitions have only two keyframes (start and end), but with animations we can define as many keyframes as we want/need. Example:</p>
+
+                    
+                    <span class="code">
+                        <xmp>
+                        @keyframes myAnimation { 
+                            0% {
+                                //properties here
+                            }
+                            32% {
+                                //more animations here
+                            }
+                        }
+                        </xmp>
+                    </span>
+                    
+                    <p>Now that we defined the animation, we can apply it: <br>
+                        <span class="code">
+                            .element { <br>
+                            animation: 300ms ease-in 5s forward myAnimation; <br>
+                            }
+                        </span></p>
+                    
+                <h4>Canvas API:</h4>
+
+                        <p>The Canvas API gives you the possibility of drawing through Javascript. This improves the performance by avoiding the need to download images. We can draw shapes and lines, arcs and text, gradients, and patterns. Also we can manipulate pixels in images and even video.</p>
+
+                <h4>SVG:</h4>
+                        <p>Scalable Vector Graphics. It preserves the quality at all sizes because it is a vector, not a bitmap. SVGs are "drawn" in an XML file.</p>
+                        <p>SVG graphics are available via the DOM. Each piece of a SVG graphic is his own element, and it can be manipulated using Javascript and CSS.</p>
+                        <p>SVG images can be created in the text editor, or using a Graphics editor, such as Adobe Illustrator.</p>
+
+                <h4>Canvas vs SVG:</h4>
+                        <p>Canvas > immediate mode. Once drawn, the browser "forgets" everything about the canvas, and it can't be modified after its creation.</p>
+                        <p>SVG > retained mode. All information is in memory, so we can access to our graphic and modify it. This consumes more memory, obviously, but it gives us the ability to use our graphic later on.</p>
+                        <h5>When to use each?</h5>
+                            <p>"Use canvas when you can't use SVG (where can't might mean animating thousands of objects, manipulating each individual pixel in an image, etc). In other words, SVG should be your default choice, canvas your backup plan"</p>
+
+                <h4>Drag and Drop API:</h4>
+                        <p>The Drag and Drop API allows you to specify that some elements are draggable, and then specify what happens when these elements are dragged over or dropped into other elements in the page.</p>
+                        <p>There are two uses for it: 1, Drag files from the computer to the browser in combination with the File API; 2, Drag elements into other elements on the same page.</p>
+                        <p>Steps to use Drag and Drop:</p>
+                        <ol>
+                            <li>Set the <span class="code">draggable</span> attribute to true on any HTML elemt you want to be draggable.</li>
+                            <li>Add an event listener dor the <span class="code">dragstart</span> event on any draggable element.</li>
+                            <li>Add an event listener for the <span class="code">dragover</span> and <span class="code">drop</span> events on any elements that you want to have accept dropped items.</li>
+                        </ol>
+        </div>
+
+        <div class="weekQuestions">
+            <h3>Questions:</h3>
+            <p>I don't have many questions because I saw most ofthese topics in my Advance CSS class last semester. But some doubts I had (and then I solved with the readings) were:</p>
+            <p>When to use canvas an when SVG</p>
+            <p>Is there any way to create a drawing using an image or vector editor and then convert it to a canvas object?</p>
+        </div>
+
+        <div class="weekExercises">
+            <h3>Exercises</h3>
+            <a href="canvas/canvas.html">Canvas practice.</a>
+            <a href="drag-and-drop/index.html">Drag and Drop practice.</a>
+        </div>
+        
+    </div>

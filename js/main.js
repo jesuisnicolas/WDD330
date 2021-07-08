@@ -20,8 +20,28 @@ const links = [
         url: "w05/index.html"
     },
     {
+        label: "Week 6 - ToDo App",
+        url: "w06/todo/toDo2.html"
+    },
+    {
         label: "Week 7 Assignments",
         url: "w07/index.html"
+    },
+    {
+        label: "Week 8 Assignments",
+        url: "w08/index.html"
+    },
+    {
+        label: "Week 9 Assignments",
+        url: "w09/index.html"
+    },
+    {
+        label: "Week 10 Assignments",
+        url: "w10/index.html"
+    },
+    {
+        label: "Week 11 Assignments",
+        url: "w11/index.html"
     }
 ]
 

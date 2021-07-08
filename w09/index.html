@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas Schaberger | WDD330 | Week 09</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Nicolas Schabergers's WDD330 Assignments</h1>
+    </header>
+
+    <div class="week-container">
+        <h2>Week 09</h2>
+        
+        <div class="weekNotes">
+            <h3>Notes:</h3>
+                <h4>The Window Object</h4>
+                    <p>Every JS enviroment has a GLOBAL OBJECT. Any global variable is a property of this object and every function is a method of it. In a browser enviroment, the global object is the <b>window object</b>, which represents the browser's window.</p>
+
+                <h4>The Browser Object Model</h4>
+                    <p>The BOM is a collection of properties and methods that contain information about the browser and computer screen, such as which browser, screen resolution, or pages has been visited before. Every browser window, tab, popup, frame, and iframe has a window object.</p>
+                    <p>If you create a variable without using var, let, or const (I.E. <span class="code">x = 6;</span>) you can access it using <span class="code">window.x;</span> because that variable is part of the window object.</p>
+                    <h5>Browser Information</h5>
+                        <p><code class="span">window.navigator.userAgent</code> will return the browser and OS used. (This is probably what some shady pages use to show you "personal" information to sell youa VPN account)</p>
+                        <p><span class="code">window.location</span> will return information about the URL.</p>
+                    <h5>Browser Histoy</h5>
+                        <p><span class="code">window.history</span> have information about previously visited pages in the current browser session.</p>
+                    <h5>Opening Windows</h5>
+                        <p>You can open a new window using <span class="code">window.open()</span>. It takes 3 parameter: the URL, the title, and a list of attributes.</p>
+                        <p><span class="code">window.open("http://www.somewebsite.com", "Some Website", "width=400, height=400m resizable=yes");</span></p>
+                    <h5>Screen Information</h5>
+                        <p><span class="code">window.screen()</span> has information about the screen the browser is displayed in. </p>
+
+                <h4>Cookies</h4>
+                    <p>Cookies are name-value pairs separated by semicolons. Cookies were invented so teh browser can "remember" things between sessions. Cookies can be read only by the same domain that created them, with a limit of 20 per domain, and 4KB per cookie.</p>
+                    <p>Cookies are used for Personalization of the webpage, storing preferences, authenticating, and tracking. Cookies are passed between the server and client with each request.</p>
+                    <p>To set a cookie: <span class="code">document.cookie = "name: superman";</span></p>
+                    <p>Cookies can be given an expiration date with the property <span class="code">expires=date</span></p>
+                    <p>Adding the string "secure" to the end of the cookie will ensure that it gets transmitted only over an HTTPS connection.</p>
+                    <p>To remove a cookie you need to set the expiration date to any date in the past.</p>
+                
+                <h4>Timing Functions</h4>
+                    <p><span class="code">setTimeout()</span> accepts a callback to a function as first parameter, and a umber of milliseconds as second parameter.</p>
+                    <p><span class="code">setInterval()</span> accepts a function and a number of milliseconds as its parameters. I will call the provided functions at intervals.</p>
+                
+                <h4>HTML 5 APIs</h4>
+                    <p>The <span class="code">data-</span> attribute is a way of embedding data in a webpage using custom attributes that are ignored by the browser. They're provate to the page and can only be used by a JS program.</p>
+                    <p>To create a data attribute: <span class="code">&lt;div id="hero" data-powers="flight superSpeed"&gt; Superman &lt;/div&gt;</span></p>
+                    <p>To access this data attribute: <span class="code">const powers = superman.dataset.powers;</span> Each property can be accessed and modified in this way.</p>
+                
+                <h4>HTML5 Web Storage</h4>
+                    <p>Provides a key-value store on the client's computer. It's perfect for storing information about users, and application-specific information that can be used during future sessions.</p>
+                    <p>Differences with cookies:</p>
+                        <ul>
+                            <li>Information stored is not shared with the server on every request.</li>
+                            <li>Information is available in multiple windows of the browser (but only if the domain is the same).</li>
+                            <li>Storage capacity limit is much larger than the 4KB of cookies.</li>
+                            <li>Any data stored does not automatically expire as it does with cookies. This potentially makes cookies a better choice for something like showing a popup once a day.</li>
+                        </ul>
+                    <p><span class="code">localStorage.setItem("name", "Walter White");</span></p>
+                    <p><span class="code">localStorage.getItem("name");</span> This will return "Walter White".</p>
+
+                <h4>Geolocation</h4>
+                    <p>Used to determine the geographic position of the device.</p>
+                    <p><span class="code">navigator.geolocation.getCurrentPosition(youAreHere);</span></p>
+                    <p><span class="code">function youAreHere(position) { <br>
+                        &#9; console.log(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`); <br>
+                    }
+                    </span></p>
+
+                <h4>Web Workers</h4>
+                    <p>Web Workers allow processes to be running in the background, adding support for concurrency in Javascript. The idea is that any process that will take a long time is carried out on the background, so a website can function without an error message appearing.</p>
+                    <p>To create a new Worker: <span class="code">const worker = new Worker("task.js");</span> This function takes the name of another javascript file as an argument. If this file exists, it will be downloaded asynchronously. The worker will only start once the file has finished downloading completely. Web workers use the concept of <b>messages</b> to communicate back and forth with the main script.</p>
+
+                <h4>Websockets</h4>
+                    <p>Until now, the main method of communication with the server has been HTTP requests. The problem with HTTP requests is that for each request we get only one response in the moment we make the request. So, what happens if you want/have to wait for the response like in a, lets say, chat application? This was solved partially with AJAX, but there's a protocol called Websockets that help with this.</p>
+                    <p>Websockets allow two-way communication between the server and the client using <b>Push Messages</b>. This means that the connection is kept open and the responses are "pushed" to the client.</p>
+
+                <h4>Notifications</h4>
+                    <p>The notification API alloes you to show notifications using the system's notifications. A benefit of it is that the notifications will be shown even if you're not in the tab that produced the notification.</p>
+                    <p>Before sending notifications you have to ask for permission to the user.</p>
+
+                <h4>Multimedia</h4>
+                    <p>HTML5 introduced the &lt;audio&gt; and &lt;video&gt; tags to deliver multimedia to the user. At the same time, the Audio API allows JS to control the multimedia.</p>
+                    <p>To insert audio: <span class="code">&lt;audio src="/audio.mp3" controls&gt;&lt;/audio&gt;</span> The 'control' keyword will show the play, pause, stop, etc. controls.</p>
+                    <p>Audio and video fire a number of events (play, pause, volumechange, loadmetadata) that allow us to respond to user's interaction with the multimedia in the page.</p>
+        </div>
+
+        <div class="weekQuestions">
+            <h3>Questions:</h3>
+                <p>What would be a good reason to use Javascript animations instead of CSS animations?</p>
+                <p>What are real life examples of Web Workers?</p>
+                <p>How much of a good practice is to show system notifications? I personally find them annoying.</p>
+        </div>
+
+        <div class="weekExercises">
+            <h3>Exercises</h3>
+            <a href="window/index.html">Window practice.</a>
+            <a href="websocket/websocket.html">Websocket practice.</a>
+            <a href="quiz-ninja/index.html">Quiz Ninja.</a>
+        </div>
+        
+    </div>
