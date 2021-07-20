@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas Schaberger | WDD330 | Week 05</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Nicolas Schabergers's WDD330 Assignments</h1>
+    </header>
+
+    <div class="week-container">
+        <h2>Week 05</h2>
+        
+        <div class="weekNotes">
+            <h3>Notes:</h3>
+            <p>System Error: there's a problem with the system or external devices with which the progrma is interacting.</p>
+            <p>Programmer Error: the program contains incorrect sintax or faulty logic. It could even be as simple as a typo.</p>        </p>
+            <p>User Error: the user has entered data incorrectly, which the program is unable to handle.</p>
+            <br>
+            <p>We can't prevent some of the system errors, while the programmer errors are solely our responsibility. The user errors mught be our mistake too, if the desigg isn't clear enough to the user.</p>
+
+            <p>Exeptions: an exeption is an error that produces a return value that can then be used by the program to deal with the error. I.E: calling a method that doesn't exist.</p>
+            <p>Stack trace is the path the program followed until it encountered the exeption.</p>
+
+            <p>Warnings: Are produced by an error that doesn't make the program crash right away. The problem can arise later when the program needs the 'thing' that failed (for example, a variable).</p>
+            <p>As Javascript is very flexible, we need to make it fail loudly in development, so any error can be spotted and fixed quicly. In production we need to make it fail gracefuly, so it still throws the error but doesn't interrupt the user.</p>
+            <br>
+            <p>Strict Mode: to use it you have to write <span class="code">'use strict';</span> in the first line of the JS file. Strict mode can also be used inside a specific function. The recommended way is to use a self invoking function. This is useful if you're working in somebody else's code and you don't know if they've been coding in strict mode.</p>
+            <br>
+            <p>USE a linting tool, such as JSLint</p>
+            <p>Use feature detection to check if the browser have certain features. This can be done with a simple <span class="code">if</span> statement and the name of the API or funtion. If we don't check beforehand, we will get an error. Checking is failing graciously :)</p>
+            <h4>Debugging in the Browser:</h4>
+                <p>Breakpoint allow us to follow the program step by step and check the values of our variables.</p>
+                <p>Using alerts and logging to the console are useful tools to check what's happening inside our program.</p>
+                <p>Another way is using the keyword <span class="code">debugger</span> in the JS code, which will pause the execution of the program so we can check it.</p>
+            
+            <h4>Error Objects:</h4>
+                <p>We can create our own error objects (messages) using the error constructor. <span class="code">const error = new Error();</span>. So, in the parenthesis we can write our error message and have it personalized.</p>
+                <p>Using the throw keyword, followed by our error, we can throw our own errors.</p>
+
+            <h4>ExceptionHandling:</h4>
+                <p>When an exception occurs, the program terminates with an error message. To the user it will look like if the program crashes. What we can do is to "catch" the error, and keep the program running. This is useful in places of the code where we know there might be errors (like when we are connecting to a third party API, or doing file I/O).</p>
+                <p><span class="code">try, catch, finally</span>. We should first "try" to do something. If that fails we "catch" the error. "Finally", we continue our program.</p>
+
+            <h4>Tests:</h4>
+                <p>We can write and perform tests for our program. A test can be as simple as a function that gives a certain input and compares the output the program gives against the output the program should be giving.</p>
+
+            <h4>Test Driven Development:</h4>
+                <p>Is the process of writing tests before writing the code. Once we have the tests written we write the code that will pass these tests successfully. Then the code is continuosly improved and tested again.</p>
+                <p>TDD is considered best practice, but most of the time programmers are more pragmatic. Tests are written, of course, but the process is more dinamic.</p>
+                <p>Test-driven Development Workflow:</p>
+                <ol>
+                    <li>Write tests (that initially fail).</li>
+                    <li>Write code to pass the tests.</li>
+                    <li>Refactor the code.</li>
+                    <li>Test refactored code.</li>
+                    <li>Write more tests fowr new features.</li>
+                </ol>
+
+            <h4>Jest:</h4>
+                <p>Jest is a test framework. Instead of writing all our tests ourselves, we can use Jest. Jest provides helper methods for common test assertions.</p>
+                <span class="code">
+                    test('square root of 4 is 2', () => { <br>
+                        expect(squareRoot(4)).toBe(2); <br>
+                    });
+                </span>
+                <p></p>
+
+        </div>
+
+        <div class="weekQuestions">
+            <h3>Questions:</h3>
+            <p>Not a question, but console.trace() looks interesting.</p>
+
+        </div>
+
+        <div class="weekExercises">
+            <h3>Exercises</h3>
+            <a href="quiz-ninja/">Quiz Ninja</a>
+        </div>
+        
+    </div>

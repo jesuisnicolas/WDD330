@@ -1,0 +1,622 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  html, body {
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    color: #000;
+    width: 100%;
+    min-height: 100%;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    html, body {
+      font-size: 22px;
+    }
+  }
+  
+  body {
+    padding: 20px;
+    background-color: #4a90e2;
+  }
+  
+  section {
+    background-color: #f2f2f2;
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    border: 1px solid #000;
+    border-radius: 10px;
+  }
+  
+  .button {
+    width: 15%;
+    min-width: 48px;
+    min-height: 48px;
+    color: #fff;
+    color: 2px solid lightgrey;
+    outline: none;
+  }
+  
+  .button:hover {
+    cursor: pointer;
+  }
+  
+  .button:hover,
+  .button:focus {
+    -webkit-filter: brightness(120%);
+            filter: brightness(120%);
+    -webkit-box-shadow: 4px 2px 5px #000;
+            box-shadow: 4px 2px 5px #000;
+  }
+  
+  .newItemEntry {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+  }
+  
+  .newItemEntry form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  
+  .newItemEntry form label {
+    position: absolute;
+    left: -10000px;
+  }
+  
+  .newItemEntry form input[type="text"] {
+    width: 80%;
+    font-size: 1.25rem;
+    border: 2px solid lightgrey;
+    border-radius: 10px;
+    padding: 0.75rem;
+    outline: none;
+  }
+  
+  .newItemEntry form input[type="text"]:focus,
+  .newItemEntry form input[type="text"]:hover {
+    -webkit-box-shadow: 4px 2px 5px #000;
+            box-shadow: 4px 2px 5px #000;
+  }
+  
+  .newItemEntry form button {
+    font-size: 1.25rem;
+    background-color: #4caf50;
+    border-radius: 10px;
+    padding: 0.75rem;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .newItemEntry form button {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .newItemEntry form #mediumItem {
+    font-size: 1.25rem;
+    background-color: #f4f446;
+    color: #000;
+    border-radius: 10px;
+    padding: 0.75rem;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .newItemEntry form #mediumItem {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .newItemEntry form #importantItem {
+    font-size: 1.25rem;
+    background-color: red;
+    border-radius: 10px;
+    padding: 0.75rem;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .newItemEntry form #importantItem {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .listContainer {
+    min-height: 60vh;
+    padding: 0.75rem;
+  }
+  
+  .listContainer .listTitle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  
+  .listContainer .listTitle button {
+    font-size: 1rem;
+    background-color: #9f6060;
+    padding: 0 0.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .listContainer .listTitle button {
+      padding: 0 0.5rem;
+    }
+  }
+  
+  .listContainer .listTitle hr {
+    width: 100%;
+  }
+  
+  .listContainer .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 1rem;
+  }
+  
+  .listContainer .item input[type="checkbox"] {
+    text-align: center;
+    width: 2.5rem;
+    min-width: 48px;
+    height: 2.5rem;
+    min-height: 48px;
+    cursor: pointer;
+    margin-right: 1.5rem;
+  }
+  
+  .listContainer .item input[type="checkbox"]:focus + label {
+    text-decoration: underline;
+  }
+  
+  .listContainer .item label {
+    font-size: 1.5rem;
+  }
+  
+  .listContainer .confirmation {
+    position: absolute;
+    left: -10000px;
+  } */
+
+  body {
+    margin: 0; }
+  
+  a {
+    text-decoration: underline;
+    color: #244B6B; }
+  
+  h1, h2, h3, h4 {
+    color: #244B6B; }
+  
+  a:hover {
+    color: #219BFF; }
+  
+  p {
+    color: #51687A; }
+  
+  .wrap {
+    min-height: 100vh;
+    margin: 0; }
+  
+  .col-1 {
+    display: grid;
+    grid-template-columns: auto; }
+  
+  .col-3 {
+    display: grid;
+    grid-template-columns: 0fr 3fr 0fr;
+    padding: 10px; }
+  
+  .navBar, .footerBar {
+    margin-top: 0;
+    background-color: #219BFF;
+    padding: 10px; }
+    .navBar a, .footerBar a {
+      text-decoration: none;
+      color: #ffffff;
+      border: #ffffff solid 1px;
+      border-radius: 5px;
+      padding: 5px; }
+    .navBar a:hover, .footerBar a:hover {
+      background-color: #ffffff;
+      color: #219BFF; }
+  
+  .sec-1 h1 {
+    margin-bottom: 0px;
+    margin-top: 5px; }
+  .sec-1 h1#link:hover {
+    color: #219BFF; }
+  .sec-1 h5 {
+    margin-top: 3px;
+    margin-bottom: 0px; }
+  .sec-1 p {
+    margin-bottom: 0px;
+    margin-top: 5px; }
+  .sec-1 li {
+    color: #51687A; }
+  
+  .footerBar {
+    margin-bottom: 0; }
+    .footerBar p {
+      color: #ffffff;
+      margin: 0; }
+    .footerBar a {
+      display: inline-block;
+      margin-left: 5px; }
+  
+  .storyTools {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px; }
+  
+  .part-2 button {
+    color: #ffffff;
+    background-color: #219BFF;
+    border-radius: 5px; }
+  
+  .part-2 button:hover {
+    color: #219BFF;
+    background-color: #ffffff; }
+  
+  #story_editor {
+    width: 100%;
+    height: 100px; }
+  
+  header {
+    display: grid;
+    padding: 10px;
+    background-color: #219BFF; }
+    header form {
+      float: right; }
+  
+  input, button {
+    border: 1.5px solid #51687A;
+    border-radius: 5px; }
+  
+  button {
+    background-color: #219BFF;
+    color: #ffffff; }
+  
+  .completed {
+    text-decoration: line-through; }
+  
+  .to-do-input-bar {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    .to-do-input-bar input {
+      width: 100%; }
+  
+  .table-output tbody tr {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr; }
+  
+  .additionaBtn {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  
+  div.special {
+    padding: 0px; }
+  
+  /* CSS Rules for the container */
+  .curtain {
+    /* Ensures the component is the full screen width */
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    /* Allows us to slide the panels outside the container without them showing */
+    overflow: hidden; }
+  
+  .curtain__wrapper {
+    /* Ensures the component is the full screen width */
+    width: 100%;
+    height: 100%; }
+  
+  /* CSS Rules for both panels */
+  .curtain__panel {
+    background: #219BFF;
+    /* Each panel takes up half the container */
+    width: 50%;
+    height: 100vh;
+    /* Makes sure panels are side-by-side */
+    float: left;
+    position: relative;
+    /* Places the panels in front of the prize */
+    z-index: 2;
+    transition: all 1s ease-out;
+    /* Animates the sliding transition */ }
+  
+  .curtain__prize {
+    /* Forces the prize position into the container start */
+    position: absolute;
+    /* Places the prize behind the panels, which are z-index 2 */
+    z-index: 1;
+    width: 59%;
+    height: 100%;
+    text-align: center; }
+    .curtain__prize img {
+      margin-top: 5%;
+      width: 5%; }
+  
+  /* Making the panel clickable by using a checkbox */
+  input[type=checkbox] {
+    position: absolute;
+    /* Force the checkbox at the start of the container */
+    cursor: pointer;
+    /* Indicate the curtain is clickable */
+    width: 59%;
+    /* The checkbox is as big as the component */
+    height: 100%;
+    z-index: 100;
+    /* Make sure the checkbox is on top of everything else */
+    opacity: 0;
+    /* Hide the checkbox */ }
+  
+  /* When the checkbox is checked... */
+  /* Slide the first panel in */
+  input[type=checkbox]:checked ~ div.curtain__panel--left {
+    transform: translateX(0); }
+  
+  /* Slide the second panel in */
+  input[type=checkbox]:checked ~ div.curtain__panel--right {
+    transform: translateX(0); }
+  
+  /* Slide the panels when hover*/
+  input[type=checkbox]:hover:checked ~ div.curtain__panel--left {
+    transform: translateX(-1%); }
+  
+  input[type=checkbox]:hover:checked ~ div.curtain__panel--right {
+    transform: translateX(1%); }
+  
+  /* Slide the panel to the left out of the container */
+  .curtain__panel--left {
+    transform: translateX(-100%);
+    text-align: right; }
+  
+  /* Slide the panel to the right out of the container */
+  .curtain__panel--right {
+    transform: translateX(100%); }
+  
+  .panel_txt {
+    color: #ffffff; }
+  
+  @keyframes orbit {
+    0% {
+      transform: translate(0, 0); }
+    5% {
+      transform: translate(0, 0); }
+    /* don't change for 5% of the time...pause */
+    25% {
+      transform: translate(300%, 0%); }
+    /* start moving again */
+    30% {
+      transform: translate(300%, 0%); }
+    /* pause */
+    50% {
+      transform: translate(300%, 300%); }
+    /* move */
+    55% {
+      transform: translate(300%, 300%); }
+    75% {
+      transform: translate(0%, 300%); }
+    80% {
+      transform: translate(0%, 300%); }
+    100% {
+      transform: translate(0%, 0%); } }
+  @keyframes morphing-circle-square {
+    0% {
+      border-radius: 50%; }
+    25% {
+      /*(if you don't add both red and circle here it will start changing one or the other before you are ready) */
+      border-radius: 50%;
+      background-color: darkred; }
+    50% {
+      /* now change to white square...but don't start rotating yet! */
+      border-radius: 0%;
+      background-color: white;
+      transform: rotate(0deg); }
+    75% {
+      /* stay a white square, but rotate 90deg */
+      border-radius: 0%;
+      background-color: white;
+      transform: rotate(90deg); }
+    100% {
+      /* stay rotated at 90, but change back to a circle */
+      border-radius: 50%;
+      background-color: darkred;
+      transform: rotate(90deg); } }
+  @keyframes slide-left {
+    0% {
+      transform: translate(0, 0); }
+    25% {
+      transform: translate(-50%, 0); }
+    50% {
+      transform: translate(-50%, 0); }
+    75% {
+      transform: translate(0, 0); }
+    100% {
+      transform: translate(0, 0); } }
+  @keyframes slide-right {
+    0% {
+      transform: translate(0, 0); }
+    25% {
+      transform: translate(50%, 0); }
+    50% {
+      transform: translate(50%, 0); }
+    75% {
+      transform: translate(0, 0); }
+    100% {
+      transform: translate(0, 0); } }
+  @keyframes bigger {
+    to {
+      height: 30%;
+      width: 30%;
+      left: 0; } }
+  .animations {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px; }
+  
+  .container {
+    height: 25vmin;
+    background-color: teal; }
+  
+  .orbiting-circle {
+    height: 25%;
+    width: 25%;
+    background-color: darkred;
+    border-radius: 50%;
+    animation: orbit 3s linear infinite; }
+  
+  .container-two, .container-three, .container-four {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  
+  .morphing-circle {
+    height: 25%;
+    width: 25%;
+    background-color: darkred;
+    border-radius: 50%;
+    animation: morphing-circle-square 3s linear infinite; }
+  
+  .splitting-circle-right, .splitting-circle-left {
+    height: 25%;
+    width: 12.5%;
+    background: darkred; }
+  
+  .splitting-circle-right {
+    border-bottom-right-radius: 200px;
+    border-top-right-radius: 200px;
+    animation: slide-right 3s linear infinite; }
+  
+  .splitting-circle-left {
+    border-bottom-left-radius: 200px;
+    border-top-left-radius: 200px;
+    animation: slide-left 3s linear infinite; }
+  
+  .big-smal-circle {
+    height: 25%;
+    width: 25%;
+    background-color: darkred;
+    border-radius: 50%;
+    animation: bigger 0.5s 1s infinite; }
+  
+  .keys {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 80vh;
+    align-items: center;
+    justify-content: center; }
+  
+  .key {
+    border: .4rem solid black;
+    border-radius: .5rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem .5rem;
+    transition: all .07s ease;
+    width: 10rem;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    text-shadow: 0 0 .5rem black; }
+  
+  .playing {
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600; }
+  
+  kbd {
+    display: block;
+    font-size: 4rem; }
+  
+  .sound {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: #ffc600; }
+  
+  #addVerses:valid {
+    border-color: green; }
+  
+  #addVerses:invalid {
+    border-color: red; }
+  
+  .form input {
+    border: 2px solid black; }
+  
+  table input[type=checkbox] {
+    width: auto;
+    height: auto;
+    position: relative;
+    opacity: unset; }
+  
+  .form div {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    margin-bottom: 5px; }
+    .form div input {
+      width: inherit; }
+  
+  .scripture-input-bar {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  
+  thead tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 3fr 1fr; }
+  
+  #addedScriptureList tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 3fr 1fr; }
+    #addedScriptureList tr td button {
+      width: 100%; }
+    #addedScriptureList tr #checkbox {
+      text-align: center; }
+  
+  @media only screen and (min-width: 600px) {
+    .col-3 {
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      padding: 10px; }
+  
+    .scripture-input-bar {
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-gap: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px; } }

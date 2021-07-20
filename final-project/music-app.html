@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/297fccf20d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <title>musicApp!</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1>music App</h1>
+        <div class="poweredBy">
+            <h2>powered by</h2>
+            <img src="images\Colored_Full_White@2x.png" alt="deezer logo">
+        </div>
+    </header>
+    <div class="dinamic">
+        <div class="search" id="search">
+            <i class="fas fa-search"></i>
+            <input type="text" class="fas fa-search" name="userSearch" id="userSearch" placeholder="search" focus-only
+                autocomplete="off">
+        </div>
+
+        <div id="songsListContainer">
+            <ul id="songsList">
+
+            </ul>
+        </div>
+    </div>
+    <div class="playerDiv hidden" id="playerDiv"> <!-- //Hidden by default -->
+        <div class="audio" id="audio">
+            <audio src="" id="mediaPlayer"></audio>
+        </div>
+        <div class="playbackButtons">
+            <img src="images/player/player-previous-button.svg" alt="previous track button" class="playbackButton" id="previousTrackButton">
+            <div id="playPauseButtons">
+                <img src="images/player/player-play-button.svg" alt="play button" class="playbackButton" id="playButton">
+                <img src="images/player/player-pause-button.svg" alt="pause button" class="playbackButton hidden" id="pauseButton">
+            </div>
+            <img src="images/player/player-next-button.svg" alt="next track button" class="playbackButton" id="nextTrackButton">
+        </div>
+        <div class="seekbar">
+            <p class="playerSongTitle"></p>
+            <progress id="seekbar" value="0" max="1" ></progress>
+        </div>
+        
+        <div class="volumeControl">
+            <i class="fas fa-volume-up"></i>
+            <input type="range" id="volume-slider" max="100" value="100">
+        </div>
+    </div>
+
+
+    <script type="module" src="musicApp.js"></script>
+</body>
+
+</html>

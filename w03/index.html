@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas Schaberger | WDD330 | Week 03</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Nicolas Schabergers's WDD330 Assignments</h1>
+    </header>
+
+    <div class="week-container">
+        <h2>Week 03</h2>
+        
+        <div class="weekNotes">
+            <h3>Notes:</h3>
+            <h4>Objects:</h4>
+                <p>Objects are like real life entities. They have attributes and functions. Functions represent the user acting over the entity. Functions can also be defined as "self-contained sets of related values and functions (they look like dictionaries with keys and values).</p>
+                <p>In Javascript, <span class="code">this</span> can be used in any function, even if it's not a method of an object. The value of <span class="code">this</span> is evaluated during runtime, depending on the context. This is interesting, because we can use the same function for diferent objects, and <span class="code">this</span> will always refer to the object which called the function. This is called "unbound this."</p>
+                <p>Arrow functions don't have <span class="code">this</span> If we try to use it in an arrow function, it will point to the outer function.</p>
+                <h4>Object Literals:</h4>
+                <p>An object can be created directly by wrapping all its properties and methods in curly braces <span class="code">{}</span>. This is a distinguishing feature of JavaScript, because it allows to create an object without a class.</p>
+                <p>All objects are Mutable.</p>
+                <p>You can use dot notation or bracket notation to have access to an object properties or methods.</p>
+                <p>OBJECTS ARE COPIED BY REFERENCE - CAREFUL!!</p>
+                <p>An object literal can be passed as a parameter to a function. This is useful when you need to pass a large number of parameters, because inside the object the order of the properties doesn't matter.</p>
+                <h4>Namespaces:</h4>
+                <p>To avoid name colissions, we can use "namespaces". A namespace is an object that has functions inside, and it is similar to a "category". It can be use to create different categories of functions to group them inside. This way, I can have two functions with the same name but in different categories, thus, avoiding a collission (because you have to call them using the namespace first). IE: <span class="code">myMath.square()</span> and <span class="code">myDraw.square()</span> are two completely different functions using the same name.</p>
+                <p></p>
+
+            <h4>DOM (Document Object Model):</h4>
+                <p>The DOM treats everything on a web page as a node. HTML tags, the text inside, and the attributes of a tag are nodes. The HTML tag is the root node, all the other are child nodes.</p>
+                <p>Whitespaces are considered text nodes</p>
+                <p>To get elements: <br>
+                <span class="code">document.GetElementById('title')</span>. Even when there should be only one element in the whole page for each ID, it’s not enforced by the HTML parser. </br>
+                <span class="code">getElementsByTagName('li')</span>. Returns all the elements with that tag. </br>
+                <span class="code">getElementsByClassName('hero')</span>. </br>
+                <span class="code">document.querySelector()</span>. allows you to use CSS notation to find
+                the first element in the document that matches a CSS selector provided as an
+                argument. </br>
+                <span class="code">document.querySelectorAll()</span>. Is similar, but returns ALL the elements that match.</p>
+                <p></p>
+                <p>It's easy to manipulate the attributes using Javascript.</p>
+                <p>The <span class="code">getAttribute()</span> method returns the value of the attribute provided as an argument.</p>
+                <p>The <span class="code">setAttribute()</span> method can change the value of an element’s attributes. For example: <span class="code">wonderWoman.setAttribute('class', 'villain');</span></p>
+                <p>Aditionally we can use the <span class="code">className()</span> method to change a class.</p>
+                <p>Useful function to create elements without having to do it manually:<br>
+                <span class="code">
+                    function createElement (tag,text) { <br>
+                    &nbsp const el = document.createElement(tag); <br>
+                    &nbsp el.textContent = text; <br>
+                    &nbsp return el <br>
+                    }</span></p>
+                <p></p>
+                <p>CSS Properties can be changed using Javascript too. For this, you select the element, and use dot notation for the properties.<br>
+                For Instance (asuming that superman is the selected element): <span class="code">superman.style.border = "red 2px solid";</span></p>
+
+            <h4>Events:</h4>
+                <p>Events provide the link between the web page and the user's interactions. Every time the user does something (clicking a link, moving the mouse, or pressing a key, and event occurs, and Javascript can detect it.</p>
+                <p>Every time the page is clicked, a callback function is called. This way the program continues running while it’s waiting for the click event to happen.</p>
+                <p>DO NOT USE ONCLICK IN THE HTML. (I've been using it all the time and thought it was great. :P</p>
+                <p>To use an event listener: <span class="code">addEventListener('click',doSomething);</span> | doSomething is the function that will be fired on click, but DO NOT USE parenthesis.</p>
+                <p>There are ways to know which node fired the event, and where the mouse was at the moment. </p>
+                <h5>Types of Events:</h5>
+                <p>Mouse events: Click, mouse down, mouse up, doubleclick, moiseover, mouseout, mousemove.</p>
+                <p>Keyboard events: Keydown, keypress, keyup.</p>
+                <p>Modifier Keys: Shift, Ctrl, Alt and meta. These keys usually have special functions in the browser or OS, so it is not a good idea to use them.</p>
+                <p>Touch events: touchstart, touchend, touchmove, touchenter, touchleave, touchcancel.</p>
+
+                <p>Event Propagation: when you click an element, you are also clicking all the elements nested inside up in the tree. There are two types of propagation: Bubbling and Capturing. Bubbling works from the bottom to the top, and capture works from the top to the bottom.</p>
+                    
+        </div>
+        <div class="weekQuestions">
+            <h3>Questions:</h3>
+            <p>I read about strict mode. Shouldn't we be using 'strict mode' all the time? Is any drawback in using it?</p>
+            <p>When talking about Objects, the books says <i>They can also inherit properties from other objects in a similar way to object-oriented languages</i>. So, if Javascript is not object-oriented, what is it, and why does it have objects?>
+            <p>If objects are copied by reference, how can I make a 'real' copy of an object? This is, a copy that doesn't affect the original when I make changes to it.</p>
+        </div>
+        <div class="weekExercises">
+            <h3>Exercises</h3>
+            <a href="quiz-ninja/index.html">Quiz Ninja</a>
+        </div>
+        
+    </div>

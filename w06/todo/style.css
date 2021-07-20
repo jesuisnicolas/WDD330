@@ -1,0 +1,104 @@
+ * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+
+body {
+    max-width: 500px;
+    background-color: rgba(231, 243, 255, 0);
+    margin: 50px auto;
+    border: 2px solid gray;
+    border-radius: 5px;
+    font-family: 'Rubik';
+}
+
+h1 {
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+}
+
+form{
+    margin: 10px 2%;
+}
+
+.form-control {
+    width: 75%;
+    display: inline-flex;
+    /* padding: 0.3rem 1rem; */
+
+}
+
+.btn-outline-primary {
+    width: 24%;
+}
+
+.viewButtons {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    margin: 10px 2%;
+}
+
+.toDoList {
+    min-height: 200px;
+    margin: 2%;
+    background-color:rgba(187, 187, 187, .4);
+    padding: 5px;
+}
+
+.task {
+    display: flex;
+    flex-direction: row;
+    height: 2.5rem;
+    background-color: rgba(248, 240, 131, 0.4);
+    padding: 10px;
+    margin: 5px;
+    align-items: center;
+    border-radius: 5px;
+}
+
+
+.addNewTask {
+    color: black;
+}
+
+.task .taskText{
+    flex-grow: 3;
+}
+
+.task > button {
+    /* width: initial; */
+    margin: 10px 5px;
+}
+
+.task > .btn {
+    padding: 0.2rem 0.3rem;
+}
+
+.taskDone {
+    background-color: rgb(113, 184, 113);
+}
+
+
+p.taskDone {  
+    text-decoration: line-through;
+}
+
+.completeTask {
+    /* border-radius: 50%; */
+    color: white;   
+    background-color:rgb(112, 182, 42);
+    font-weight: bold;
+}
+
+.viewButtons > .btn {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    margin: 10px;
+}

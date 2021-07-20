@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas Schaberger | WDD330 | Week 07</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Nicolas Schabergers's WDD330 Assignments</h1>
+    </header>
+
+    <div class="week-container">
+        <h2>Week 07</h2>
+        
+        <div class="weekNotes">
+            <h3>Notes:</h3>
+                <p>In JS functions are 'first-class' objects, meaning they can be passed around in the same way than any other value.</p>
+
+                <h4>Functions Properties and Methods.</h4>
+                    <p><span class="code">.length</span>: returns the number of parameters a function has.</p>
+                    <p><span class="code">.call()</span>: allows to provide a value fos a 'this' inside the function. The parameter has to be an object.</p>
+                    <p><span class="code">.apply()</span>: similar to call, but for passong an array.</p>
+                    <p>Both <span class="code">call()</span> and <span class="code">apply()</span> are very powerful because they allow generalized functions to be written without being tied to an specific object.</p>
+                <h4>Custom Properties.</h4>
+                    <p>You can add any property to a function (like to any other object). To add a description to a function named square, you could write <span class="code">square.description = "Some description here";</span></p>
+                <h4>Memoization.</h4>
+                    <p>Allows caching. If a function takes some time to compute a value, that value can be stored in cache. Then, if we need that value again, we can use it from cache instead of computing it again.</p>
+                <h4>IIFE or Immediatly Invoked Function Expressions.</h4>
+                    <p>Functions that are called as soon as they're defined.</p>
+                    <p>Sintax: <span class="code">(function() {'here goes the function'})();</span> The las parenthesis calls the function immediatly.</p>
+                    <p>IIFEs can be used to to create temporary variables. Variables created inside an IIFE are destroyed after the function finishes.</p>
+                <h4>Redefining Functions.</h4>
+                    <p>Functions can redefine themselves. This is done by assigning an anonymous function to a variable that has the same name as the function. If we assign the same function to another variable (having 2) then they will be different</p>
+                <h4>Init-Time Branching</h4>
+                    <p>We can use the redefining of functions to check if some feature is available in the browser, and then redefine the function to work in the browser. Yes, the first time the operation will take longer (because we have to check the feature), but each consequent time we call the function, it will be already redefined.</p>
+                <h4>Callbacks!</h4>
+                    <p>Callbacks are useful when working with asynchronous code. Using callbacks we can "wait" without blocking the rest of the code. But having to many callbacks in the same function can result in <b>Spaghetti Code.</b></p>
+                <h4>Promises</h4>
+                    <p>As nested callbacks are problematic, we can use Promises. To use promises we need to create one with a constructor. And then write the code we want to run inside it.</p>
+                <h4>Closures.</h4>
+                    <p>Closures are a way to return variables of an outer function, from an inner function, without calling the outer function (yeah, it doesn't make sense at first). To do it, you can return the inner function in the outer function. Then assign the outer function to a variable, and that variable will then hold the inner function, keeping access to the variables in the outer function, even when we are not calling it anymore.</p>
+                <h4>Pure Functions.</h4>    
+                    <p>A pure function follows these rules:</p>
+                    <ol>
+                        <li> The return value of a pure function should only depend on the values
+                            provided as arguments. It doesn’t rely on values from somewhere else in the
+                            program.</li>
+                        <li>There are no side-effects. A pure function doesn’t change any values or data
+                            elsewhere in the program. It only makes non-destructive data transformations and
+                            returns new values, rather than altering any of the underlying data.</li>
+                        <li>Referential transparency. Given the same arguments, a pure function will
+                            always return the same result.</li>
+                    </ol>
+                    <p>Tomply with these rules, any function must have at least one argument, and at least one return value.</p>
+                <h4>Higer-Order Functions.</h4>
+                    <p>Higher-order functions are functions that accept another function as an argument,
+                    or return another function as a result, or both.</p>
+                
+                <h3>Ajax.</h3>
+                    <p>Ajax is a technique that allows web pages to communicate asynchronously with a
+                    server, and it dynamically updates web pages without reloading.</p>
+                    <h4>Clients and Servers</h4>
+                        <p>Ajax is a technique that allows web pages to communicate asynchronously with a
+                        server, and it dynamically updates web pages without reloading. This requests are made to a server.</p>
+                    <h4>Fetch API.</h4>
+                        <p>The Fetch API is the standard for requesting and sending data asynchronously across a network. The Fetch API uses promises to avoid callback hell.</p>
+                        <p>The code for the Fetch API is this: <br>
+                            <span class="code">fetch('http://example.com/data') <br>
+                            .then(/code that handles the response) <br>
+                            .catch(/code that runs if there's an error)
+                            </span>
+                        </p>
+                        <p></p>
+                        <p>Requests and Responses work in a similar way as they do in NodeJs. </p>
+        </div>
+
+        <div class="weekQuestions">
+            <h3>Questions:</h3>
+            <p>How can I know what features do I have to test when working with Init-time branching? </p>
+            <p>Is there a way to use <span class="code">.then() .catch()</span> beyond the Fetch API? I know it from Nodejs and it's super easy to use.</p>
+            
+        </div>
+
+        <div class="weekExercises">
+            <h3>Exercises</h3>
+            <a href="quiz-ninja/">Quiz Ninja</a>
+            <a href="ajax.html">Ajax</a>
+        </div>
+        
+    </div>

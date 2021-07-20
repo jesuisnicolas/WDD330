@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="44.37" height="44.37" viewBox="0 0 44.37 44.37">
+  <title>player-next-button</title>
+  <style>
+    circle {
+      fill: #6d6d6d;
+      stroke: #e6e7e8;
+      stroke-miterlimit: 10; 
+      stroke-width: 0.6233233342158688px
+    }
+
+    polygon {
+      fill: #e6e7e8;
+      stroke: #6d6d6d;
+      stroke-miterlimit: 10;
+      stroke-width: 0.4435519278049469px
+    }
+
+    rect {
+      fill: #e6e7e8;
+      stroke: #6d6d6d;
+      stroke-miterlimit: 10;
+      stroke-width: 0.4435519278049469px
+    }
+
+    polygon:active {
+      fill: #000000;
+    }
+  </style>
+
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <circle id="nextCircle" cx="22.19" cy="22.19" r="21.87"/>
+        <polygon points="28.6 22.19 13.52 30.89 13.52 13.48 28.6 22.19"/>
+        <rect x="28.6" y="13.83" width="3.84" height="16.71"/>
+      </g>
+    </g>
+  </g>
+
+</svg>
