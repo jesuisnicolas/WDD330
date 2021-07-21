@@ -222,8 +222,49 @@ div.playerDiv {
     align-self: center;
 
 }
-#nextCircle:hover {
-    fill: red;
+
+.artistHeader {
+    margin: 15px;
+    display: inline-flex;
+    width: 100%;
+    .artistPicture {
+        width: 50%;
+        img {
+            width: 100%;;
+        }
+    }
+    h1 {
+        font-weight: bold;
+        font-size: 2.5rem;
+        margin-left: 5%;
+    }
+}
+
+.artistTop50 {
+    margin: 15px;
+    ul {
+        padding-left: 0;
+    }
+}
+
+.albumHeader {
+    margin: 15px;
+    display: inline-flex;
+    width: 95%;
+    .albumPicture {
+        width: 50%;
+        img {
+            width: 100%;;
+        }
+    }
+    h1 {
+        font-weight: bold;
+        font-size: 2.5rem;
+        margin-left: 5%;
+    }
+    h2 {
+        margin-left: 5%;
+    }
 }
 
 .hidden {

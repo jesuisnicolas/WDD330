@@ -4,9 +4,9 @@ import {
 import { startPlaying, playPause, prevTrack, nextTrack } from "./player.js";
 
 
-// const searchByArtist = (artistID) {
-//     artistRequest(artistId);
-// } 
+window.searchByAlbum = (albumId) => {
+    albumRequest(albumId);
+} 
 
 window.searchByArtist = (artistID) => {
     artistRequest(artistID);

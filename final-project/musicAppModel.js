@@ -1,4 +1,5 @@
-import { updateUIWithResponse, updateUIWithArtist, updateUIWithError } from "./musicAppView.js";
+import { updateUIWithResponse, updateUIWithArtist, updateUIWithError, updateUIWithAlbum } from "./musicAppView.js";
+
 
 const baseURL = "https://deezerdevs-deezer.p.rapidapi.com/";
 const searchURL = "search?q=" //this needs a string (the users' search)
@@ -18,8 +19,7 @@ const fetchInit = {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-key": "bb2294e876msh6e6489d7845d18dp1db413jsnc41eab9d4034",
-		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-        "mode": "no-cors"
+		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
 	}
 }
 
@@ -61,15 +61,13 @@ const artistRequest = function(artistID) {
 }
 
 const albumRequest = function(albumID) {
-    const userSearch = document.querySelector("#userSearch");
-    fetch(`${baseURL}${artistURL}${albumID}`, fetchInit)
+    fetch(`${baseURL}${albumURL}${albumID}`, fetchInit)
     // fetch(`${urlByType[type]}${userSearch}`, fetchInit)
         .then(response => handleErrors(response)) 
         .then((data) => {
-            top50Request(data, data.tracklist);
-
-            
             console.log(data);
+
+            updateUIWithAlbum(data);
         })
         .catch((err) => {
             // updateUIWithError(err);
@@ -79,20 +77,14 @@ const albumRequest = function(albumID) {
 
 const top50Request = function(artist, top50URL) {
     // const userSearch = document.querySelector("#userSearch");
-    fetch(`https://cors.io/?${top50URL}`, {
-        "Content-Type": "text/html",
-        "method": "GET",
-        "path": "/artist/242817/top?limit=50",
-        "authority": "api.deezer.com",
-        // "mode": "no-cors"
-        "Access-Control-Allow-Origin": "*"
-
+    fetch(`https://cors-anywhere.herokuapp.com/${top50URL}`, {
+        "Content-Type": "application/json"
     })
-    .then(response => console.log(response)) 
+    .then(response => handleErrors(response))
     .then((data) => {
-        updateUIWithArtist(artist, data);
         console.log(artist);
         console.log(data);
+        updateUIWithArtist(artist, data);
     })
     .catch((err) => {
         // updateUIWithError(err);

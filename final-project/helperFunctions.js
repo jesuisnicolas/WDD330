@@ -1,3 +1,5 @@
+import { Song } from "./Song.js";
+
 function secondsToMin(secs) {
     let dateObj = new Date(secs * 1000);
     let hours = dateObj.getUTCHours();
@@ -26,7 +28,24 @@ function sliceQueue(queue, link){
     return queue.slice(index);
 }
 
+//This functions updates a global object that's an array with the songs in a
+//specific format
+function createSongQueue(array) {
+    window.songsQueue = [];
+    array.forEach((item) => {
+        const song = new Song(item.title, 
+                              item.artist.name,
+                              item.album.title,
+                              item.album.cover,
+                              item.duration,
+                              item.preview,
+                              item.album.id,
+                              item.artist.id)
+        songsQueue.push(song);
+    });
+}
 export {
     secondsToMin,
-    sliceQueue
+    sliceQueue,
+    createSongQueue
 }

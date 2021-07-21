@@ -19,7 +19,7 @@
         <h1>music App</h1>
         <div class="poweredBy">
             <h2>powered by</h2>
-            <img src="images\Colored_Full_White@2x.png" alt="deezer logo">
+            <img src="images\Deezer_Logo_RVB_White.svg" alt="deezer logo">
         </div>
     </header>
     <div class="dinamic">
@@ -31,27 +31,32 @@
 
         <div id="songsListContainer">
             <ul id="songsList">
-
+                
             </ul>
         </div>
     </div>
-    <div class="playerDiv hidden" id="playerDiv"> <!-- //Hidden by default -->
+    <div class="playerDiv hidden" id="playerDiv">
+        <!-- //Hidden by default -->
         <div class="audio" id="audio">
             <audio src="" id="mediaPlayer"></audio>
         </div>
         <div class="playbackButtons">
-            <img src="images/player/player-previous-button.svg" alt="previous track button" class="playbackButton" id="previousTrackButton">
+            <img src="images/player/player-previous-button.svg" alt="previous track button" class="playbackButton"
+                id="previousTrackButton">
             <div id="playPauseButtons">
-                <img src="images/player/player-play-button.svg" alt="play button" class="playbackButton" id="playButton">
-                <img src="images/player/player-pause-button.svg" alt="pause button" class="playbackButton hidden" id="pauseButton">
+                <img src="images/player/player-play-button.svg" alt="play button" class="playbackButton"
+                    id="playButton">
+                <img src="images/player/player-pause-button.svg" alt="pause button" class="playbackButton hidden"
+                    id="pauseButton">
             </div>
-            <img src="images/player/player-next-button.svg" alt="next track button" class="playbackButton" id="nextTrackButton">
+            <img src="images/player/player-next-button.svg" alt="next track button" class="playbackButton"
+                id="nextTrackButton">
         </div>
         <div class="seekbar">
             <p class="playerSongTitle"></p>
-            <progress id="seekbar" value="0" max="1" ></progress>
+            <progress id="seekbar" value="0" max="1"></progress>
         </div>
-        
+
         <div class="volumeControl">
             <i class="fas fa-volume-up"></i>
             <input type="range" id="volume-slider" max="100" value="100">

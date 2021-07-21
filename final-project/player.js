@@ -61,7 +61,7 @@ function startPlaying(link) {
 
     //just adds one to the current index.
     const playNext = () => {
-        if (current < sliced.length) {
+        if (current < sliced.length - 1) {
             current += 1;
             playPlay();
         } else {
