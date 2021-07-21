@@ -79,12 +79,13 @@ const albumRequest = function(albumID) {
 
 const top50Request = function(artist, top50URL) {
     // const userSearch = document.querySelector("#userSearch");
-    fetch(`${top50URL}`, {
+    fetch(`https://cors.io/?${top50URL}`, {
         "Content-Type": "text/html",
         "method": "GET",
         "path": "/artist/242817/top?limit=50",
         "authority": "api.deezer.com",
-        "mode": "no-cors"
+        // "mode": "no-cors"
+        "Access-Control-Allow-Origin": "*"
 
     })
     .then(response => console.log(response)) 
