@@ -7,28 +7,24 @@ import { Song } from "./Song.js";
 const updateUIWithResponse = function(songs) {
     const songsArray = songs.data;
     createSongQueue(songsArray); //This updates the global object
-    // console.log(songsArray); 
-    // songsQueue = [];
-    // songsArray.forEach((item) => {
-    //     const song = new Song(item.title, 
-    //                           item.artist.name,
-    //                           item.album.title,
-    //                           item.album.cover,
-    //                           item.duration,
-    //                           item.preview,
-    //                           item.album.id,
-    //                           item.artist.id)
-    //     songsQueue.push(song);
-    // });
+ 
+    let ul = document.querySelector("#songsList");
 
-    const ul = document.querySelector("#songsList");
+    if(typeof(ul) == 'undefined' || ul == null){
+        let bigDiv = document.getElementById("songsListContainer");
+        bigDiv.innerHTML = "";
+        ul = document.createElement("ul");
+        ul.id = "songsList";
+        bigDiv.appendChild(ul);
+    }
+
     ul.innerHTML = "";
     songsQueue.forEach((item) => {
         ul.innerHTML += 
-        `<li class="song" onclick=playSong("${item.preview}")>
-            <img src=${item.cover}></img>
+        `<li class="song">
+            <img src=${item.cover} onclick=playSong("${item.preview}")></img>
             <div class="songDetails">
-                <p class="songTitle">${item.title}</p>
+                <p class="songTitle" onclick=playSong("${item.preview}")>${item.title}</p>
                 <p class="songAuthor" onclick=searchByArtist(${item.artistId})>${item.artist}</p>
                 <p class="songAlbum" onclick=searchByAlbum(${item.albumId})>${item.album}</p>
                 <p class="songDuration">${secondsToMin(item.duration)}</p>
@@ -64,10 +60,10 @@ const updateUIWithArtist = function(artistData, top50) {
     // const top50Songs = createSongQueue(top50);
     top50.data.forEach((item) => {
         ul.innerHTML += 
-        `<li class="song" onclick=playSong("${item.preview}")>
-            <img src=${item.album.cover}></img>
+        `<li class="song">
+            <img src=${item.album.cover} onclick=playSong("${item.preview}")></img>
             <div class="songDetails">
-                <p class="songTitle">${item.title}</p>
+                <p class="songTitle" onclick=playSong("${item.preview}")>${item.title}</p>
                 <p class="songAuthor" onclick=searchByArtist(${item.artist.name})>${item.artist.name}</p>
                 <p class="songAlbum" onclick=searchByAlbum(${item.album.title})>${item.album.title}</p>
                 <p class="songDuration">${secondsToMin(item.duration)}</p>
@@ -101,11 +97,11 @@ const updateUIWithAlbum = function(albumData) {
     // const top50Songs = createSongQueue(top50);
     songList.forEach((item) => {
         ul.innerHTML += 
-        `<li class="song" onclick=playSong("${item.preview}")>
-            <img src=${albumData.cover_small}></img>
+        `<li class="song">
+            <img src=${albumData.cover_small} onclick=playSong("${item.preview}")></img>
             <div class="songDetails">
-                <p class="songTitle">${item.title}</p>
-                <p class="songAuthor" onclick=searchByArtist(${item.artist.name})>${item.artist.name}</p>
+                <p class="songTitle" onclick=playSong("${item.preview}")>${item.title}</p>
+                <p class="songAuthor" onclick=searchByArtist(${item.artist.id})>${item.artist.name}</p>
                 <p class="songAlbum" onclick=searchByAlbum(${albumData.id})>${albumData.title}</p>
                 <p class="songDuration">${secondsToMin(item.duration)}</p>
             </div>

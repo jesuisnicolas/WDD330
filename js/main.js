@@ -45,7 +45,7 @@ const links = [
     },
     {
         label: "Final Project",
-        url: "final-project/music-app.html"
+        url: "final-project/index.html"
     }
 ]
 
