@@ -5,8 +5,6 @@ import {
 
 const playerDiv = document.getElementById("playerDiv");
 
-//This is a try for a multitrack player:
-
 let queue = [] //global object created when the data was fetched
 let sliced = []
 let current = 0;

@@ -1,7 +1,4 @@
 import { secondsToMin, createSongQueue } from "./helperFunctions.js";
-import { Song } from "./Song.js";
-
-// window.songsQueue = [];
 
 //This function will update the UI with the data from the fetch API's response
 const updateUIWithResponse = function(songs) {
@@ -34,9 +31,6 @@ const updateUIWithResponse = function(songs) {
 }
 
 const updateUIWithArtist = function(artistData, top50) {
-    //the next two lines are to make sure the player goes away.
-    // const player = document.getElementById("playerDiv");
-    // player.className = "playerDiv hidden";
     const dinamic = document.getElementById("songsListContainer");
     dinamic.innerHTML = "";
     dinamic.innerHTML =`
@@ -57,7 +51,6 @@ const updateUIWithArtist = function(artistData, top50) {
     `
     console.log(top50.data);
     const ul = document.querySelector(".top50Ul");
-    // const top50Songs = createSongQueue(top50);
     top50.data.forEach((item) => {
         ul.innerHTML += 
         `<li class="song">
@@ -94,7 +87,6 @@ const updateUIWithAlbum = function(albumData) {
     </div>
     `
     const ul = document.querySelector(".top50Ul");
-    // const top50Songs = createSongQueue(top50);
     songList.forEach((item) => {
         ul.innerHTML += 
         `<li class="song">
@@ -108,9 +100,6 @@ const updateUIWithAlbum = function(albumData) {
          </li>`
     });
 }
-
-
-
 
 //This function will display an error provided by the fetch API
 const updateUIWithError = function(error) {
