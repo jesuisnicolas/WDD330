@@ -7,14 +7,6 @@ const artistURL = "artist/" //this needs an artist ID
 const trackURL = "track/" //this needs a track ID
 const albumURL = "album/" //this needs an album ID
 
-//This object stores the URLs for the different type of search.
-const urlByType = {
-    "default": `${baseURL}${searchURL}`,
-    "songAuthor": `${baseURL}${artistURL}`,
-    "songAlbum": `${baseURL}${albumURL}`,
-    "songTitle": `${baseURL}${trackURL}`
-}
-
 const fetchInit = {
 	"method": "GET",
 	"headers": {
@@ -22,7 +14,6 @@ const fetchInit = {
 		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
 	}
 }
-
 
 //This is a helper function that will check the OK status of the response
 const handleErrors = function(response) {
@@ -51,7 +42,6 @@ const artistRequest = function(artistID) {
     fetch(`${baseURL}${artistURL}${artistID}`, fetchInit)
         .then(response => handleErrors(response)) 
         .then((data) => {
-            // console.log(data);
             top50Request(data, data.tracklist);
         })
         .catch((err) => {
@@ -65,8 +55,6 @@ const albumRequest = function(albumID) {
     // fetch(`${urlByType[type]}${userSearch}`, fetchInit)
         .then(response => handleErrors(response)) 
         .then((data) => {
-            console.log(data);
-
             updateUIWithAlbum(data);
         })
         .catch((err) => {
@@ -82,8 +70,6 @@ const top50Request = function(artist, top50URL) {
     })
     .then(response => handleErrors(response))
     .then((data) => {
-        console.log(artist);
-        console.log(data);
         updateUIWithArtist(artist, data);
     })
     .catch((err) => {

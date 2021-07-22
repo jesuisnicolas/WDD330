@@ -16,7 +16,6 @@ function searchMusic() {
     })
     .then(response => response.json())
     .then((data) => {
-        console.log(data);
         createPlayer(data);
     })
 

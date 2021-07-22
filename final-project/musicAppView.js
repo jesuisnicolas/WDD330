@@ -49,7 +49,6 @@ const updateUIWithArtist = function(artistData, top50) {
         </ul>
     </div>
     `
-    console.log(top50.data);
     const ul = document.querySelector(".top50Ul");
     top50.data.forEach((item) => {
         ul.innerHTML += 

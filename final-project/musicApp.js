@@ -17,9 +17,6 @@ window.playSong = (linko) => {
 }
 
 //This listener will wait for the user to input something and then call the fetch API
-const botoncin = document.getElementById("botoncin");
-const artist = document.querySelectorAll("songAuthor");
-const form = document.getElementById("search");
 const userSearch = document.querySelector("#userSearch");
 const playPauseButton = document.querySelector("#playPauseButtons");
 const nextTrackButton = document.getElementById("nextTrackButton");
